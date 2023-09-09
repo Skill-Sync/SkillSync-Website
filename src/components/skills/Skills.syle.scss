@@ -1,0 +1,27 @@
+.skills-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 40px;
+  width: 80%;
+  .skill-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 6px 16px;
+    width: 200px;
+    border-radius: 12px;
+    margin-right: 20px;
+  }
+}
+.row-2 {
+  transform: translate(-280px, 0);
+  -webkit-transform: translate(-280px, 0);
+  -moz-transform: translate(-280px, 0);
+  -ms-transform: translate(-280px, 0);
+  -o-transform: translate(-280px, 0);
+}
+.row-3 {
+  transform: translate(-138px, 0);
+}

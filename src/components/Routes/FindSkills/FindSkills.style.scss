@@ -1,0 +1,54 @@
+.find-skills-page-container {
+  background-color: #131313;
+  height: 913px;
+  .logo-container {
+    padding: 20px 40px 0px;
+  }
+  .find-skills-title {
+    color: #f3f7fc;
+    font-family: Montserrat;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  .skills-container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 30px;
+    .interested-skills-container,
+    .have-skills-container {
+      border: 1px solid #4b4b4b;
+      border-radius: 24px;
+      width: 586px;
+      height: 560px;
+      padding: 30px 10px;
+      .interested-skills-title {
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 600;
+        padding: 0px 0px 20px;
+      }
+      .interested-skills-search-label {
+        font-family: DM Sans;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        margin-left: 25px;
+      }
+    }
+  }
+  .next-btn {
+    width: 400px;
+    height: 55px;
+    margin: 30px 550px;
+    border-radius: 10px;
+    font-size: 17px;
+    letter-spacing: 2px;
+    background: linear-gradient(252deg, #ffbe0b 2.63%, #fb5607 113.77%);
+    box-shadow: 0px 6.8px 105.4px 0px rgba(153, 171, 198, 0.18);
+  }
+}

@@ -1,7 +1,13 @@
 import React from "react";
 
-const FormInput = () => {
-  return <div>FormInput</div>;
+import "./FormInput.style.scss";
+const FormInput = ({ label, ...otherProps }) => {
+  return (
+    <div>
+      <label className="phone-filed">{label}</label>
+      <input {...otherProps} placeholder={label} />
+    </div>
+  );
 };
 
 export default FormInput;
