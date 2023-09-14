@@ -1,0 +1,77 @@
+.hero-section {
+  background-color: #181a20;
+  height: 520px;
+  .hero-section-container {
+    width: 80%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    transform: translate(0, 50px);
+  }
+
+  .left-hero-section {
+    width: 51%;
+    transform: translate(0, 60px);
+    font-family: Montserrat;
+    .hero-section-title {
+      font-size: 67px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 130%;
+      letter-spacing: -1.675px;
+    }
+
+    .hero-section-p {
+      margin-top: 20px;
+      font-size: 21px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      span {
+        font-size: 21px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+      }
+    }
+    .hero-btns-container {
+      margin-top: 30px;
+      .btn-join {
+        height: 60px;
+        padding: 16px 50px;
+        border-radius: 20px;
+        margin-right: 20px;
+        background-color: #3366ff;
+        .link-join {
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          text-align: center;
+          font-feature-settings: "liga" off;
+          font-family: Montserrat;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 24px;
+        }
+      }
+      .btn-download {
+        height: 60px;
+        padding: 16px 50px;
+        border-radius: 20px;
+        margin-right: 20px;
+        background-color: white;
+        .link-download {
+          color: #3366ff;
+          text-decoration: none;
+          font-feature-settings: "liga" off;
+          font-family: Montserrat;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}

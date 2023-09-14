@@ -6,7 +6,8 @@
   input {
     display: flex;
     width: 466px;
-    height: 31px;
+    height: 45px;
+    font-size: 18px;
     margin: 6px auto;
     justify-content: flex-end;
     align-items: center;
@@ -27,6 +28,7 @@
 
     li {
       padding: 5px 10px;
+      font-size: 18px;
       border-bottom: 1px solid rgba(217, 217, 217, 0.1);
     }
   }

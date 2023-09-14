@@ -1,12 +1,4 @@
-import {
-  Box,
-  FormControl,
-  IconButton,
-  InputLabel,
-  MenuItem,
-  Select,
-  Typography,
-} from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import "./ResultItemLearned.style.scss";
 import CloseIcon from "@mui/icons-material/Close";
 
