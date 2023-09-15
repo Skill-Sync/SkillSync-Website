@@ -1,0 +1,50 @@
+.set-date-container {
+  margin-top: 70px;
+  background-color: #efe7e3;
+  width: 1143px;
+  height: 389px;
+  border-radius: 24px;
+  padding: 30px;
+  .set-date-title {
+    color: #000606;
+    font-family: Montserrat;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 0.16px;
+    text-align: center;
+    transform: translate(0, 40px);
+    -webkit-transform: translate(0, 40px);
+    -moz-transform: translate(0, 40px);
+    -ms-transform: translate(0, 40px);
+    -o-transform: translate(0, 40px);
+  }
+  .date-container {
+    width: 80%;
+    margin: 80px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .input-container {
+      .profile-label-input {
+        color: #6c6c6c;
+        font-family: Montserrat;
+        font-size: 21px;
+        font-weight: 600;
+        margin-top: 40px;
+      }
+      .profile-date-input {
+        background-color: white;
+        color: #000;
+        font-family: Montserrat;
+        font-size: 29.954px;
+        font-weight: 600;
+        letter-spacing: 0.15px;
+        border: none;
+        width: 290px;
+        height: 50px;
+        padding: 14px 20px;
+      }
+    }
+  }
+}

@@ -42,7 +42,7 @@ const SignupForm = () => {
     try {
       await signup(name, email, pass, passConfirm, type);
       console.log("signup success");
-      navigate("/find-skill");
+      navigate("/mentorhome");
     } catch (error) {
       console.log("signup failed:", error);
     }

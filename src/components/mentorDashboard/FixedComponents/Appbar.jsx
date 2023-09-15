@@ -11,7 +11,7 @@ import {
 import { Menu } from "@mui/icons-material";
 import Khadra from "../../../assets/MohamedKhadra.jpg";
 
-const Appbar = ({ drawerWidth, toggleOpenDrawer }) => {
+const Appbar = ({ drawerWidth, toggleOpenDrawer, selectedItem }) => {
   return (
     <AppBar
       position="static"
@@ -25,10 +25,10 @@ const Appbar = ({ drawerWidth, toggleOpenDrawer }) => {
     >
       <Toolbar>
         <IconButton
-          sx={{ color: "white", display: { sm: "none" } }}
+          sx={{ color: "black", display: { sm: "none" } }}
           onClick={toggleOpenDrawer}
         >
-          <Menu />
+          <Menu style={{ color: "black" }} />
         </IconButton>
         <Link
           color="inherit"
@@ -44,7 +44,7 @@ const Appbar = ({ drawerWidth, toggleOpenDrawer }) => {
             letterSpacing: "0.16px",
           }}
         >
-          Home
+          {selectedItem === "Profile" ? "Profile" : "Home"}
         </Link>
         <Box
           sx={{

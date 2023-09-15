@@ -9,6 +9,7 @@ export const drawerWidth = 240;
 const Root = () => {
   const [showDrawer, setShowDrawer] = useState("none");
   const [drawerType, setDrawerType] = useState("permanent");
+  const [selectedItem, setSelectedItem] = useState("Home");
 
   const toggleOpenDrawer = () => {
     setShowDrawer("block");
@@ -18,18 +19,26 @@ const Root = () => {
     setShowDrawer("none");
     setDrawerType("permanent");
   };
-
+  const handleItemClick = (itemTitle) => {
+    setSelectedItem(itemTitle);
+  };
   return (
     <Box>
       <CssBaseline />
 
       <div>
-        <Appbar drawerWidth={drawerWidth} toggleOpenDrawer={toggleOpenDrawer} />
+        <Appbar
+          drawerWidth={drawerWidth}
+          toggleOpenDrawer={toggleOpenDrawer}
+          selectedItem={selectedItem}
+        />
         <PremanentDrawer
           drawerWidth={drawerWidth}
           showDrawer={showDrawer}
           drawerType={drawerType}
           toggleCloseDrawer={toggleCloseDrawer}
+          selectedItem={selectedItem}
+          onItemClick={handleItemClick}
         />
         <Box
           component="main"

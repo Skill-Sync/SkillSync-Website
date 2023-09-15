@@ -4,8 +4,9 @@ import { Avatar, Box, Container, Typography } from "@mui/material";
 import Slaman from "../../../assets/MohammedSalman.jpg";
 import Abo from "../../../assets/MohammedAboEl-Seoud.jpg";
 import Mohanad from "../../../assets/MohannadElSayeh.png";
+import RequestsSessions from "../RequstsSessions/RequestsSessions";
 
-const sessionsArray = [
+export const sessionsArray = [
   {
     image: Slaman,
     name: " Salman",
@@ -81,6 +82,7 @@ const Dashboard = () => {
             ))}
           </Box>
         </Box>
+        <RequestsSessions />
       </Container>
     </Box>
   );

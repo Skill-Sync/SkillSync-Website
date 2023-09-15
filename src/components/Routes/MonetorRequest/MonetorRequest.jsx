@@ -33,7 +33,7 @@ const MonetorRequest = () => {
     try {
       monitorRequest(name, email, phone, selectedSkill, requestLetter);
       console.log("signup success");
-      navigate("/find-skill");
+      navigate("/signup");
     } catch (error) {
       console.log("signup failed:", error);
     }
@@ -44,11 +44,11 @@ const MonetorRequest = () => {
       .then((res) => res.json())
       .then((data) => {
         setSkill(data.data);
-        console.log(data.data);
       });
   }, []);
   const handleSkillChange = (e) => {
     setSelectedSkills(e.target.value);
+    setSelectedSkill(e.target.value);
   };
 
   const handleSelectClick = () => {

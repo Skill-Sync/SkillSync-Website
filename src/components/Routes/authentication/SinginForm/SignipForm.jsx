@@ -31,11 +31,21 @@ const SigninForm = () => {
     console.log("Submit button clicked");
     const type = "mentor";
     try {
-      await login(email, pass, type);
-      console.log("login success");
-      navigate("/find-skill");
+      const response = await login(email, pass, type);
+
+      if (response.status === "success") {
+        console.log("login success");
+        const user = response.data;
+        const access_token = response.accessJWT;
+        console.log(user, access_token);
+        navigate("/mentorhome");
+      } else {
+        console.log("Login failed:", response.message);
+        const errorData = await response.json();
+        console.error("Login failed:", errorData);
+      }
     } catch (error) {
-      console.log("login failed:", error.message);
+      console.log("login failed:", error);
     }
   };
 

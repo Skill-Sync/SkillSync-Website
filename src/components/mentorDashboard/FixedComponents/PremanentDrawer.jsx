@@ -22,6 +22,8 @@ const PremanentDrawer = ({
   toggleCloseDrawer,
   showDrawer,
   drawerType,
+  selectedItem,
+  onItemClick,
 }) => {
   const navigate = useNavigate();
 
@@ -29,12 +31,15 @@ const PremanentDrawer = ({
     my list title
   =============*/
   const myList = [
-    { title: "Home", navLocation: "/", icon: HomeIcon },
-
-    { title: "Profile", icon: PersonIcon, navLocation: "/profile" },
-
+    { title: "Home", navLocation: "/mentorhome", icon: HomeIcon },
+    {
+      title: "Profile",
+      icon: PersonIcon,
+      navLocation: "/mentorhome/mentorprofile",
+    },
     { title: "Logout", icon: LogoutIcon, navLocation: "/logout" },
   ];
+
   return (
     <Drawer
       showDrawer={showDrawer}
@@ -72,14 +77,56 @@ const PremanentDrawer = ({
         <Divider />
 
         {myList.map((item, index) => (
-          <ListItem key={index} disablePadding>
-            <ListItemButton onClick={() => navigate(item.navLocation)}>
+          <ListItem
+            key={index}
+            disablePadding
+            sx={{
+              backgroundColor:
+                selectedItem === item.title ? "#282B34" : "inherit", // Change text color to blue when selected
+              my: "10px",
+              width: "200px",
+              borderRadius: "10px",
+              margin: "20px auto",
+            }}
+          >
+            <ListItemButton
+              onClick={() => {
+                navigate(item.navLocation);
+                onItemClick(item.title);
+              }}
+              sx={{
+                color: selectedItem === item.title ? "blue" : "inherit", // Change text color to blue when selected
+              }}
+            >
               <ListItemIcon>
-                <item.icon />
+                <item.icon
+                  sx={{
+                    marginLeft: "18px",
+                    fontSize: "25px",
+                    color: selectedItem === item.title ? "blue" : "red", // Change icon color to blue when selected
+                  }}
+                />
               </ListItemIcon>
               <ListItemText
                 primary={
-                  <Typography fontWeight="bold">{item.title}</Typography>
+                  <Typography
+                    fontWeight="bold"
+                    sx={{
+                      textAlign: "center",
+                      fontFamily: "Montserrat",
+                      fontSize: "16px",
+                      fontWeight: "600",
+                      marginRight: "100px",
+                      color:
+                        item.title === "Logout"
+                          ? "#FF0000"
+                          : selectedItem === item.title
+                          ? "blue"
+                          : "inherit", // Change text color to blue when selected
+                    }}
+                  >
+                    {item.title}
+                  </Typography>
                 }
               />
             </ListItemButton>

@@ -1,0 +1,70 @@
+.requests-sessions-container {
+  margin-top: 30px;
+  width: 1144px;
+  height: 540px;
+  background-color: #efe7e3;
+  border-radius: 12px;
+  padding: 30px;
+  .requests-sessions-title {
+    color: #000;
+    font-family: Poppins;
+    font-size: 22px;
+    font-weight: 500;
+  }
+  .response-sessions-container {
+    padding: 20px 6px;
+    .response-session-container {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1.3fr;
+      gap: 35px;
+      margin-bottom: 30px;
+      .name-img-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        .img-avatar {
+          width: 55px;
+          height: 55px;
+        }
+        .name {
+          color: #000;
+          font-family: Montserrat;
+          font-size: 20px;
+          font-weight: 600;
+        }
+      }
+      .date-container {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin-left: 100px;
+        .date {
+          color: #000;
+          font-family: Montserrat;
+          font-size: 15px;
+          font-weight: 400;
+        }
+      }
+      .btns-container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        .btn {
+          font-family: Montserrat;
+          font-size: 15px;
+          color: white;
+          font-weight: 600;
+          border-radius: 44px;
+          width: 130px;
+          height: 35px;
+        }
+        .Approve-btn {
+          background-color: #37d159;
+        }
+        .Reject-btn {
+          background-color: #ff6746;
+        }
+      }
+    }
+  }
+}

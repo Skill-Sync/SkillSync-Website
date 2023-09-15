@@ -44,6 +44,7 @@ const ourTeamArray = [
     role: "Front End ",
   },
 ];
+
 const OurTeam = () => {
   return (
     <div className="our-team-section">
@@ -91,7 +92,7 @@ const OurTeam = () => {
         </div>
         <div className="footer">
           <Typography component="p" variant="p" className="footer-p">
-            © 2023 Anima Landing Page Ui Kit.
+            Made with love by SkillSync team ❤️
           </Typography>
           <SocialLinks />
         </div>
