@@ -1,25 +1,34 @@
-# Frontend Project Readme
+# SkillSync
 
-This readme provides an overview of the key concepts and technologies used in our React-based frontend project.
+![SkillSync Team](./src/assets/Logo.svg)
 
-## 1. React JS
+## Building Blocks
 
-React is a JavaScript library for building user interfaces. It allows us to create reusable UI components, manage the application's state efficiently, and update the UI in response to data changes.
+| Block            | Description                                                             |
+| ---------------- | ----------------------------------------------------------------------- |
+| Material UI      | React UI framework for building user interfaces.                        |
+| Sass             | CSS preprocessor for easier styling.                                    |
+| React-Router-Dom | Used for handling routing in the app.                                   |
+| Context API      | General state management for authentication, mentor profiles, and more. |
 
-## 2. Sass
+## Project Structure
 
-Sass (Syntactically Awesome Stylesheets) is a CSS preprocessor that enhances the styling capabilities of our project. It provides features like variables, nesting, and mixins, making it easier to write maintainable and organized CSS code.
+our project's source code is organized into the following folders:
 
-## 3. Material UI
+| Folder          | Description                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| components      | Contains project components, including reusable ones like buttons and form inputs.                                        |
+| Routes          | Includes components with routes such as sign-up forms and navigation bars.                                                |
+| mentorDashboard | Contains mentor-related information and components.                                                                       |
+| Context         | Manages application-wide state, including authentication, mentor updates, mentor requests, sessions, and available hours. |
+| pages           | Contains the home page introducing our project and team.                                                                  |
+| assets          | Stores images and icons used in our project.                                                                              |
 
-Material UI is a popular React UI framework that provides a set of pre-designed, customizable UI components following the Material Design guidelines. It helps us maintain a consistent and visually appealing user interface.
+# Clone the repository
 
-## 4. React-Router-Dom
+git clone https://github.com/Skill-Sync/SkillSync-Website.git
 
-React Router Dom is a routing library for React applications. It enables us to create dynamic, single-page applications with multiple views or pages by managing the routing and navigation within our application.
+# Install dependencies
 
-## 5. Context API
+npm install
 
-The Context API is a built-in state management solution in React. It allows us to share and manage global state or data across different components without the need for prop drilling. This is particularly useful for maintaining application-wide data or user authentication states.
-
-Feel free to refer to this readme whenever you need a quick overview of the core technologies and concepts used in our frontend project. For more detailed information and documentation, please consult the respective documentation for each technology or library.
