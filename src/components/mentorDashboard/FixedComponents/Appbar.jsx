@@ -9,9 +9,12 @@ import {
   Box,
 } from "@mui/material";
 import { Menu } from "@mui/icons-material";
-import Khadra from "../../../assets/MohamedKhadra.jpg";
+import khadra from "../../../assets/MohamedKhadra.jpg";
+import { useStateContext } from "../../../context/AuthContext";
 
 const Appbar = ({ drawerWidth, toggleOpenDrawer, selectedItem }) => {
+  const { user } = useStateContext();
+  console.log(user);
   return (
     <AppBar
       position="static"
@@ -58,7 +61,7 @@ const Appbar = ({ drawerWidth, toggleOpenDrawer, selectedItem }) => {
             padding: "7px",
           }}
         >
-          <Avatar alt="Khadra" src={Khadra} />
+          <Avatar alt="" src={khadra} />
           <Box>
             <Typography
               variant="h6"
@@ -70,14 +73,18 @@ const Appbar = ({ drawerWidth, toggleOpenDrawer, selectedItem }) => {
                 fontFamily: "Montserrat",
               }}
             >
-              Mohamed Khadra
+              Mohamed Khdara
             </Typography>
             <Typography
               variant="span"
               color="white"
-              sx={{ mr: 1, fontSize: "13px", color: "rgba(41, 45, 50, 0.44)" }}
+              sx={{
+                mr: 1,
+                fontSize: "13px",
+                color: "rgba(41, 45, 50, 0.44)",
+              }}
             >
-              Front End
+              React
             </Typography>
           </Box>
         </Box>

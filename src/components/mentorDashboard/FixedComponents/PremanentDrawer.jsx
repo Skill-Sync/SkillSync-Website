@@ -16,8 +16,9 @@ import PersonIcon from "@mui/icons-material/Person";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as DrawerLogo } from "../../../assets/Drawer.svg";
+import { useStateContext } from "../../../context/AuthContext";
 
-const PremanentDrawer = ({
+const PermanentDrawer = ({
   drawerWidth,
   toggleCloseDrawer,
   showDrawer,
@@ -26,10 +27,8 @@ const PremanentDrawer = ({
   onItemClick,
 }) => {
   const navigate = useNavigate();
+  const { logout } = useStateContext();
 
-  /*=============
-    my list title
-  =============*/
   const myList = [
     { title: "Home", navLocation: "/mentorhome", icon: HomeIcon },
     {
@@ -37,7 +36,16 @@ const PremanentDrawer = ({
       icon: PersonIcon,
       navLocation: "/mentorhome/mentorprofile",
     },
-    { title: "Logout", icon: LogoutIcon, navLocation: "/logout" },
+    {
+      title: "Logout",
+      icon: LogoutIcon,
+      // Use the `logout` function when clicking "Logout"
+      onClick: () => {
+        setTimeout(() => {
+          navigate("/");
+        }, 2000);
+      },
+    },
   ];
 
   return (
@@ -82,7 +90,7 @@ const PremanentDrawer = ({
             disablePadding
             sx={{
               backgroundColor:
-                selectedItem === item.title ? "#282B34" : "inherit", // Change text color to blue when selected
+                selectedItem === item.title ? "#282B34" : "inherit",
               my: "10px",
               width: "200px",
               borderRadius: "10px",
@@ -93,9 +101,12 @@ const PremanentDrawer = ({
               onClick={() => {
                 navigate(item.navLocation);
                 onItemClick(item.title);
+                if (item.onClick) {
+                  item.onClick();
+                }
               }}
               sx={{
-                color: selectedItem === item.title ? "blue" : "inherit", // Change text color to blue when selected
+                color: selectedItem === item.title ? "blue" : "inherit",
               }}
             >
               <ListItemIcon>
@@ -103,7 +114,7 @@ const PremanentDrawer = ({
                   sx={{
                     marginLeft: "18px",
                     fontSize: "25px",
-                    color: selectedItem === item.title ? "blue" : "red", // Change icon color to blue when selected
+                    color: selectedItem === item.title ? "blue" : "red",
                   }}
                 />
               </ListItemIcon>
@@ -122,7 +133,7 @@ const PremanentDrawer = ({
                           ? "#FF0000"
                           : selectedItem === item.title
                           ? "blue"
-                          : "inherit", // Change text color to blue when selected
+                          : "inherit",
                     }}
                   >
                     {item.title}
@@ -137,4 +148,4 @@ const PremanentDrawer = ({
   );
 };
 
-export default PremanentDrawer;
+export default PermanentDrawer;

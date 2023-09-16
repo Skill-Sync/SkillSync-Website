@@ -78,7 +78,6 @@ const MonetorRequest = () => {
             <FormInput
               className="text-monetor-field"
               required
-              fullWidth
               name="name"
               label="Full name"
               type="name"
@@ -92,7 +91,6 @@ const MonetorRequest = () => {
             <FormInput
               className="text-monetor-field"
               required
-              fullWidth
               id="email"
               label="Email Address"
               name="email"
@@ -112,7 +110,6 @@ const MonetorRequest = () => {
             <FormInput
               className="text-monetor-field  phone-filed"
               required
-              fullWidth
               id="Phone"
               name="Phone"
               label="Phone"
@@ -138,8 +135,8 @@ const MonetorRequest = () => {
                   Skill required to have a mentorship in (one skill)
                 </option>
               )}
-              {skill.map((item) => (
-                <option value={item.id} key={item.id}>
+              {skill.map((item, index) => (
+                <option value={item.id} key={index}>
                   {item.name}
                 </option>
               ))}
@@ -153,10 +150,10 @@ const MonetorRequest = () => {
           viewBox="0 0 2 560"
           fill="none"
         >
-          <path d="M1 1L1.00002 559" stroke="white" stroke-linecap="round" />
+          <path d="M1 1L1.00002 559" stroke="white" strokeLinecap="round" />
         </svg>
         <Box className="submit-container">
-          <label className="monetor-message-label" for="message">
+          <label className="monetor-message-label" htmlFor="message">
             Request Letter:
           </label>
 

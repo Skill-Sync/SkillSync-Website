@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
 
-// create a new context object using the createContext() method
 const UserContext = createContext();
 
 const ContextProvider = ({ children }) => {
@@ -26,6 +25,7 @@ const ContextProvider = ({ children }) => {
       if (response.ok) {
         const userData = await response.json();
         setUser(userData);
+        console.log(userData);
       } else {
         const errorData = await response.json();
         throw new Error(`Signup failed: ${errorData}`);
@@ -40,9 +40,6 @@ const ContextProvider = ({ children }) => {
   //   Login Function
   // ==================
   const login = async (email, pass, type) => {
-    console.log("Email:", email);
-    console.log("Password:", pass);
-    console.log("Type:", type);
     try {
       const response = await fetch(
         "https://skill-sync.onrender.com/api/v1/auth/login",
@@ -54,11 +51,12 @@ const ContextProvider = ({ children }) => {
       );
 
       if (response.ok) {
-        const user = await response.json();
-        setUser(user);
+        const userData = await response.json();
+        setUser(userData);
+        return userData;
       } else {
         const errorData = await response.json();
-        console.error("Login failed:", errorData); // Log the error response
+        console.error("Login failed:", errorData);
         throw new Error("Login failed");
       }
     } catch (error) {
@@ -66,11 +64,20 @@ const ContextProvider = ({ children }) => {
       throw new Error("Login failed: " + error.message);
     }
   };
+  /*
+  ===========
+  Log Out function
+============
+  */
+  const logout = () => {
+    setUser(null);
+  };
 
   const value = {
     user,
     login,
     signup,
+    logout,
   };
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };

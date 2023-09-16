@@ -90,7 +90,6 @@ const SignupForm = () => {
                   <FormInput
                     className="text-field"
                     required
-                    fullWidth
                     name="name"
                     label="Full name"
                     type="name"
@@ -106,7 +105,6 @@ const SignupForm = () => {
                   <FormInput
                     className="text-field"
                     required
-                    fullWidth
                     id="email"
                     label="Email Address"
                     name="email"
@@ -126,7 +124,6 @@ const SignupForm = () => {
                   <FormInput
                     className="text-field"
                     required
-                    fullWidth
                     name="password"
                     label="Password"
                     id="password"
@@ -145,7 +142,7 @@ const SignupForm = () => {
                         position: "absolute",
                         right: "-170px",
                         top: "50%",
-                        transform: "translateY(-30%)",
+                        transform: "translateY(-25%)",
                         cursor: "pointer",
                       }}
                     >
@@ -159,18 +156,17 @@ const SignupForm = () => {
                 </Grid>
                 <Grid
                   className="input-container"
-                  itemb
+                  item
                   sx={{
                     position: "relative",
-                    marginLeft: "20px",
-                    marginTop: "15px",
-                    marginBottom: "10px",
+                    marginLeft: "5px",
+                    marginTop: "5px",
+                    marginBottom: "8px",
                   }}
                 >
                   <FormInput
                     className="text-field"
                     required
-                    fullWidth
                     name="confirmPassword"
                     label="Confirm Password"
                     id="confirmPassword"
@@ -190,7 +186,7 @@ const SignupForm = () => {
                         position: "absolute",
                         right: "-170px",
                         top: "50%",
-                        transform: "translateY(-50%)",
+                        transform: "translateY(-25%)",
                         cursor: "pointer",
                       }}
                     >
@@ -202,43 +198,11 @@ const SignupForm = () => {
                     </IconButton>
                   </InputAdornment>
                 </Grid>
-                {/* <Grid className="agreement-container " item>
-                  <input
-                    type="checkbox"
-                    id="remember"
-                    name="remember"
-                    style={{
-                      width: "30px",
-                      height: "30px",
-                      marginRight: "10px",
-                    }}
-                  />
-
-                  <label htmlFor="remember">
-                    I've read and agree to the
-                    <span className="agreement-text">
-                      {" "}
-                      Terms and Conditions {""}
-                    </span>
-                    and the
-                    <span className="agreement-text"> Privacy Policy </span>
-                  </label>
-                </Grid> */}
               </Grid>
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                className="signup-btn"
-              >
+              <Button type="submit" variant="contained" className="signup-btn">
                 Sign Up
               </Button>
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                className="google-btn"
-              >
+              <Button type="submit" variant="contained" className="google-btn">
                 <img src={google} alt="google_Image" />
                 Sign in with Google
               </Button>

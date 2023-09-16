@@ -1,11 +1,10 @@
-import React , {useState , useContext ,createContext} from "react";
+import React, { useState, useContext, createContext } from "react";
 
+const monitorContext = createContext("");
 
-const monitorContext = createContext('')
-
-const MonitorProvider =({children})=>{
+const MonitorProvider = ({ children }) => {
   const [monitor, setMonitor] = useState();
-    const monitorRequest = async (name, email, phone, skill, requestLetter) => {
+  const monitorRequest = async (name, email, phone, skill, requestLetter) => {
     try {
       const response = await fetch(
         "https://skill-sync.onrender.com/api/v1/auth/mentorRequest",
@@ -14,7 +13,7 @@ const MonitorProvider =({children})=>{
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ name, email,  phone, skill, requestLetter }),
+          body: JSON.stringify({ name, email, phone, skill, requestLetter }),
         }
       );
       if (response.ok) {
@@ -30,14 +29,12 @@ const MonitorProvider =({children})=>{
     }
   };
 
-  const value= {monitor , monitorRequest}
-return(
-  <monitorContext.Provider value={value}>
-    {children}
-  </monitorContext.Provider>
-)
-}
+  const value = { monitor, monitorRequest };
+  return (
+    <monitorContext.Provider value={value}>{children}</monitorContext.Provider>
+  );
+};
 
-export const useMonitorContext = ()=> useContext(monitorContext)
+export const useMonitorContext = () => useContext(monitorContext);
 
 export default MonitorProvider;

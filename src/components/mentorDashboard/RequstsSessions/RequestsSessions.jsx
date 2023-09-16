@@ -2,7 +2,8 @@ import React from "react";
 import { sessionsArray } from "../Dashboard/Dashboard";
 import { Avatar, Box, Button, Typography } from "@mui/material";
 import "./RequestsSessions.style.scss";
-const RequestsSessions = () => {
+
+const RequestsSessions = ({ onReject, onApprove }) => {
   return (
     <Box className="requests-sessions-container">
       <Typography
@@ -12,6 +13,7 @@ const RequestsSessions = () => {
       >
         Requests
       </Typography>
+
       <Box className="response-sessions-container">
         {sessionsArray.map((session) => (
           <Box className="response-session-container">
@@ -36,8 +38,18 @@ const RequestsSessions = () => {
             </Box>
 
             <Box className="btns-container">
-              <Button className="Approve-btn btn">Approve</Button>
-              <Button className="Reject-btn btn">Reject</Button>
+              <Button
+                className="Approve-btn btn"
+                onClick={() => onApprove(session)}
+              >
+                Approve
+              </Button>
+              <Button
+                className="Reject-btn btn"
+                onClick={() => onReject(session)}
+              >
+                Reject
+              </Button>
             </Box>
           </Box>
         ))}

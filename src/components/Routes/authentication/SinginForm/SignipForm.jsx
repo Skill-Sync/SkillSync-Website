@@ -28,24 +28,14 @@ const SigninForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submit button clicked");
+
     const type = "mentor";
     try {
-      const response = await login(email, pass, type);
-
-      if (response.status === "success") {
-        console.log("login success");
-        const user = response.data;
-        const access_token = response.accessJWT;
-        console.log(user, access_token);
-        navigate("/mentorhome");
-      } else {
-        console.log("Login failed:", response.message);
-        const errorData = await response.json();
-        console.error("Login failed:", errorData);
-      }
+      await login(email, pass, type);
+      console.log("signup success");
+      navigate("/mentorhome");
     } catch (error) {
-      console.log("login failed:", error);
+      console.log("signup failed:", error);
     }
   };
 
@@ -79,7 +69,7 @@ const SigninForm = () => {
           <Box className="form-container">
             <Typography
               className="create-account-h"
-              component="h1"
+              component="h5"
               variant="h5"
             >
               Welcome Back
@@ -91,7 +81,7 @@ const SigninForm = () => {
 
             <Box
               component="form"
-              onSubmit={handleSubmit}
+              // onSubmit={handleSubmit}
               noValidate
               className="login-container"
             >
@@ -102,7 +92,6 @@ const SigninForm = () => {
                   <FormInput
                     className="text-field"
                     required
-                    fullWidth
                     id="email"
                     label="Email "
                     name="email"
@@ -121,7 +110,6 @@ const SigninForm = () => {
                   <FormInput
                     className="text-field"
                     required
-                    fullWidth
                     name="password"
                     label="Password"
                     id="password"
@@ -152,46 +140,15 @@ const SigninForm = () => {
                     </IconButton>
                   </InputAdornment>
                 </Grid>
-
-                {/* <Grid
-                  className="agreement-container "
-                  item
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                  }}
-                >
-                  <Box sx={{ display: "flex", alignItems: "center" }}>
-                    <input
-                      type="checkbox"
-                      id="remember"
-                      name="remember"
-                      style={{
-                        width: "20px",
-                        height: "20px",
-                        marginRight: "10px",
-                      }}
-                    />
-                    <label htmlFor="remember">Remember Me</label>
-                  </Box>
-                  <Typography>Forgot Password?</Typography>
-                </Grid> */}
               </Grid>
               <Button
-                type="submit"
-                fullWidth
+                onClick={handleSubmit}
                 variant="contained"
                 className="login-btn"
               >
                 LOGIN
               </Button>
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                className="google-btn"
-              >
+              <Button type="submit" variant="contained" className="google-btn">
                 <img src={google} alt="google_Image" />
                 Sign in with Google
               </Button>
@@ -213,16 +170,15 @@ const SigninForm = () => {
             <IconTitle style={{ margin: "0 15px 18px 0" }} />
             <Title />
           </Box>
-          <Typography component="h1" variant="h1" className="login-page-h">
-            find your{" "}
+          <Typography component="h2" variant="h2" className="login-page-h">
+            find your
             <Typography
               component="h1"
               variant="h1"
               className=" login-page-nested-h"
             >
-              {" "}
               future skills
-            </Typography>{" "}
+            </Typography>
             Here!
           </Typography>
           <Frame style={{ width: "105%" }} />
