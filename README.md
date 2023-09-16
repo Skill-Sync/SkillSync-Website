@@ -31,3 +31,7 @@ git clone https://github.com/Skill-Sync/SkillSync-Website.git
 # Install dependencies
 
 npm install
+<<<<<<< HEAD
+=======
+
+>>>>>>> eebc6b4936936d5a9ebcfa82f8ad97b3a8ee8645
